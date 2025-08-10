@@ -266,6 +266,27 @@
     z-index: 20;
   }
 /* زر القائمة (الهاتف) */
+/* قاعدة عامة لتجنب مشاكل الحسابات العرضية */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* حجم الخط الأساسي للجسم */
+body {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-light, #ddd);
+  background-color: var(--bg1, #080006);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0 12px; /* بعض الحشو من الجانبين للهواتف */
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+}
+
 /* زر القائمة (الهاتف) */
 .menu-toggle {
   display: none;
@@ -284,7 +305,7 @@
   .header-inner {
     flex-wrap: wrap;
     gap: 12px;
-    padding: 16px;
+    padding: 16px 0;
   }
 
   .menu-toggle {
@@ -315,7 +336,8 @@
   .nav a {
     padding: 10px;
     text-align: right;
-    word-break: break-word;  /* تكسر كلمات الروابط الطويلة */
+    word-break: break-word;
+    font-size: 18px;
   }
 
   .hero {
@@ -324,34 +346,31 @@
   }
 
   body {
-    font-size: calc(16px + 0.3vw);
+    font-size: calc(16px + 0.4vw);
     line-height: 1.8;
-    word-break: break-word;    /* تكسر الكلمات الطويلة في النص */
-    overflow-wrap: break-word; /* لف النصوص */
-    hyphens: auto;             /* تفعيل التهجئة التلقائية لكسر الكلمات */
   }
 
   .quote {
-    font-size: calc(22px + 0.5vw) !important;
+    font-size: calc(22px + 0.6vw) !important;
     padding: 0 10px;
     line-height: 2.2 !important;
     word-break: break-word;
-    white-space: pre-wrap !important; /* يسمح بكسر الأسطر والحفاظ على الفراغات */
+    white-space: pre-wrap !important;
   }
 
   .work-desc, p, li {
-    white-space: pre-wrap !important;    /* يسمح بكسر الأسطر والحفاظ على الفراغات */
+    white-space: pre-wrap !important;
     word-wrap: break-word;
     overflow-wrap: break-word;
     hyphens: auto;
     max-width: 100%;
     line-height: 2;
-    font-size: calc(17px + 0.2vw);
+    font-size: calc(17px + 0.3vw);
     margin-bottom: 1em;
   }
 
   .form-control {
-    font-size: calc(15px + 0.2vw);
+    font-size: calc(15px + 0.3vw);
     line-height: 1.7;
   }
 
@@ -360,7 +379,7 @@
   }
 
   .section {
-    padding: 18px;
+    padding: 18px 12px;
   }
 
   .logo {
