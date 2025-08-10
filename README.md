@@ -344,6 +344,30 @@
     .title {
       font-size: 18px;
     }
+
+    /* التعديلات الجديدة للنصوص الديناميكية */
+    body {
+      font-size: calc(16px + 0.3vw);
+      line-height: 1.8;
+    }
+
+    .work-desc {
+      white-space: pre-wrap;
+      line-height: 2;
+      font-size: calc(17px + 0.2vw);
+      margin-top: 12px;
+    }
+
+    .quote {
+      font-size: calc(22px + 0.5vw);
+      line-height: 2.2;
+      padding: 0 10px;
+    }
+
+    .form-control {
+      font-size: calc(15px + 0.2vw);
+      line-height: 1.7;
+    }
   }
 </style>
 </head>
