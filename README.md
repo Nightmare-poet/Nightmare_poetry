@@ -266,6 +266,7 @@
     z-index: 20;
   }
 /* زر القائمة (الهاتف) */
+/* زر القائمة (الهاتف) */
 .menu-toggle {
   display: none;
   background: rgba(107,33,168,0.2);
