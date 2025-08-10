@@ -280,7 +280,7 @@
   }
 
   /* تحسين التجاوب للشاشات الصغيرة */
-  @media (max-width: 767px) {
+@media (max-width: 767px) {
   .header-inner {
     flex-wrap: wrap;
     gap: 12px;
@@ -322,7 +322,6 @@
     padding: 20px 12px;
   }
 
-  /* هنا نضيف تعديل النصوص لتكون مناسبة */
   body {
     font-size: 16px;
     line-height: 1.6;
@@ -335,10 +334,14 @@
     word-break: break-word;
   }
 
-  .work-desc {
-    white-space: normal;
-    font-size: 16px;
+  .work-desc, .quote, p, li {
+    white-space: normal !important;    /* يسمح بكسر الأسطر */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    max-width: 100%;
     line-height: 1.6;
+    margin-bottom: 1em;
   }
 
   .grid.cols-3 {
