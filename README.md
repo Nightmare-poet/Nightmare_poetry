@@ -315,6 +315,7 @@
   .nav a {
     padding: 10px;
     text-align: right;
+    word-break: break-word;  /* تكسر كلمات الروابط الطويلة */
   }
 
   .hero {
@@ -325,6 +326,9 @@
   body {
     font-size: 16px;
     line-height: 1.6;
+    word-break: break-word;    /* تكسر الكلمات الطويلة في النص */
+    overflow-wrap: break-word; /* لف النصوص */
+    hyphens: auto;             /* تفعيل التهجئة التلقائية لكسر الكلمات */
   }
 
   .quote {
@@ -332,9 +336,10 @@
     padding: 0 10px;
     line-height: 1.8 !important;
     word-break: break-word;
+    white-space: normal !important; /* السماح بكسر الأسطر */
   }
 
-  .work-desc, .quote, p, li {
+  .work-desc, p, li, .quote {
     white-space: normal !important;    /* يسمح بكسر الأسطر */
     word-wrap: break-word;
     overflow-wrap: break-word;
