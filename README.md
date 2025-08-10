@@ -265,21 +265,20 @@
     border-top: 1px solid rgba(107,33,168,0.15);
     z-index: 20;
   }
+/* زر القائمة (الهاتف) */
+.menu-toggle {
+  display: none;
+  background: rgba(107,33,168,0.2);
+  color: var(--text-light);
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 12px;
+}
 
-  /* زر القائمة (الهاتف) */
-  .menu-toggle {
-    display: none;
-    background: rgba(107,33,168,0.2);
-    color: var(--text-light);
-    border: none;
-    border-radius: 8px;
-    padding: 8px 12px;
-    font-size: 20px;
-    cursor: pointer;
-    margin-left: 12px;
-  }
-
-  /* تحسين التجاوب للشاشات الصغيرة */
+/* تحسين التجاوب للشاشات الصغيرة */
 @media (max-width: 767px) {
   .header-inner {
     flex-wrap: wrap;
@@ -324,29 +323,35 @@
   }
 
   body {
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: calc(16px + 0.3vw);
+    line-height: 1.8;
     word-break: break-word;    /* تكسر الكلمات الطويلة في النص */
     overflow-wrap: break-word; /* لف النصوص */
     hyphens: auto;             /* تفعيل التهجئة التلقائية لكسر الكلمات */
   }
 
   .quote {
-    font-size: 20px !important;
+    font-size: calc(22px + 0.5vw) !important;
     padding: 0 10px;
-    line-height: 1.8 !important;
+    line-height: 2.2 !important;
     word-break: break-word;
-    white-space: normal !important; /* السماح بكسر الأسطر */
+    white-space: pre-wrap !important; /* يسمح بكسر الأسطر والحفاظ على الفراغات */
   }
 
-  .work-desc, p, li, .quote {
-    white-space: normal !important;    /* يسمح بكسر الأسطر */
+  .work-desc, p, li {
+    white-space: pre-wrap !important;    /* يسمح بكسر الأسطر والحفاظ على الفراغات */
     word-wrap: break-word;
     overflow-wrap: break-word;
     hyphens: auto;
     max-width: 100%;
-    line-height: 1.6;
+    line-height: 2;
+    font-size: calc(17px + 0.2vw);
     margin-bottom: 1em;
+  }
+
+  .form-control {
+    font-size: calc(15px + 0.2vw);
+    line-height: 1.7;
   }
 
   .grid.cols-3 {
@@ -366,30 +371,9 @@
 
   .title {
     font-size: 18px;
-  }    /* التعديلات الجديدة للنصوص الديناميكية */
-    body {
-      font-size: calc(16px + 0.3vw);
-      line-height: 1.8;
-    }
-
-    .work-desc {
-      white-space: pre-wrap;
-      line-height: 2;
-      font-size: calc(17px + 0.2vw);
-      margin-top: 12px;
-    }
-
-    .quote {
-      font-size: calc(22px + 0.5vw);
-      line-height: 2.2;
-      padding: 0 10px;
-    }
-
-    .form-control {
-      font-size: calc(15px + 0.2vw);
-      line-height: 1.7;
-    }
   }
+}
+
 </style>
 </head>
 <body>
