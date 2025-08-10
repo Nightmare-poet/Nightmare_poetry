@@ -72,7 +72,7 @@
   .header {
     position: relative;
     z-index: 10;
-    padding: 28px 24px 8px;
+    padding: 8px 0;
     background: linear-gradient(180deg, rgba(0,0,0,0.25), transparent);
     backdrop-filter: blur(4px);
     border-bottom: 1px solid rgba(107,33,168,0.12);
@@ -84,6 +84,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 16px;
+    padding: 0 16px;
   }
   .brand {
     display: flex;
@@ -264,6 +265,86 @@
     border-top: 1px solid rgba(107,33,168,0.15);
     z-index: 20;
   }
+
+  /* زر القائمة (الهاتف) */
+  .menu-toggle {
+    display: none;
+    background: rgba(107,33,168,0.2);
+    color: var(--text-light);
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 12px;
+  }
+
+  /* تحسين التجاوب للشاشات الصغيرة */
+  @media (max-width: 767px) {
+    .header-inner {
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 16px;
+    }
+
+    .menu-toggle {
+      display: block;
+      order: 1;
+      margin-right: auto;
+    }
+
+    .brand {
+      order: 2;
+      flex-grow: 1;
+    }
+
+    .nav {
+      display: none;
+      order: 3;
+      width: 100%;
+      flex-direction: column;
+      gap: 8px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(107,33,168,0.2);
+    }
+
+    body.menu-open .nav {
+      display: flex;
+    }
+
+    .nav a {
+      padding: 10px;
+      text-align: right;
+    }
+
+    .hero {
+      min-height: 40vh;
+      padding: 20px 12px;
+    }
+
+    .quote {
+      font-size: 22px;
+    }
+
+    .grid.cols-3 {
+      grid-template-columns: 1fr;
+    }
+
+    .section {
+      padding: 18px;
+    }
+
+    .logo {
+      width: 44px;
+      height: 44px;
+      font-size: 16px;
+      border-radius: 8px;
+    }
+
+    .title {
+      font-size: 18px;
+    }
+  }
 </style>
 </head>
 <body>
@@ -274,6 +355,7 @@
   </div>
   <header class="header">
     <div class="header-inner">
+      <button class="menu-toggle" onclick="document.body.classList.toggle('menu-open')">☰</button>
       <div class="brand">
         <div class="logo" title="لوحة التحكم">ك</div>
         <div>
@@ -347,20 +429,9 @@
   }
 
   function shortDesc(text) {
-    const lines = text.split('\n');
-    if (lines.length === 0) return '';
-
-    const firstLine = lines[0];
-    let result = firstLine;
-
-    if (lines.length > 1) {
-      const halfSecondLine = lines[1].slice(0, 20);
-      result += '\n' + halfSecondLine + '...';
-    } else if (text.length > firstLine.length) {
-      result += '...';
-    }
-
-    return result;
+    const maxLength = 100;
+    if (text.length <= maxLength) return text;
+    return text.substring(0, maxLength) + '...';
   }
 
   function render() {
