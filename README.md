@@ -281,70 +281,84 @@
 
   /* تحسين التجاوب للشاشات الصغيرة */
   @media (max-width: 767px) {
-    .header-inner {
-      flex-wrap: wrap;
-      gap: 12px;
-      padding: 16px;
-    }
+  .header-inner {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 16px;
+  }
 
-    .menu-toggle {
-      display: block;
-      order: 1;
-      margin-right: auto;
-    }
+  .menu-toggle {
+    display: block;
+    order: 1;
+    margin-right: auto;
+  }
 
-    .brand {
-      order: 2;
-      flex-grow: 1;
-    }
+  .brand {
+    order: 2;
+    flex-grow: 1;
+  }
 
-    .nav {
-      display: none;
-      order: 3;
-      width: 100%;
-      flex-direction: column;
-      gap: 8px;
-      padding-top: 12px;
-      border-top: 1px solid rgba(107,33,168,0.2);
-    }
+  .nav {
+    display: none;
+    order: 3;
+    width: 100%;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(107,33,168,0.2);
+  }
 
-    body.menu-open .nav {
-      display: flex;
-    }
+  body.menu-open .nav {
+    display: flex;
+  }
 
-    .nav a {
-      padding: 10px;
-      text-align: right;
-    }
+  .nav a {
+    padding: 10px;
+    text-align: right;
+  }
 
-    .hero {
-      min-height: 40vh;
-      padding: 20px 12px;
-    }
+  .hero {
+    min-height: 40vh;
+    padding: 20px 12px;
+  }
 
-    .quote {
-      font-size: 22px;
-    }
+  /* هنا نضيف تعديل النصوص لتكون مناسبة */
+  body {
+    font-size: 16px;
+    line-height: 1.6;
+  }
 
-    .grid.cols-3 {
-      grid-template-columns: 1fr;
-    }
+  .quote {
+    font-size: 20px !important;
+    padding: 0 10px;
+    line-height: 1.8 !important;
+    word-break: break-word;
+  }
 
-    .section {
-      padding: 18px;
-    }
+  .work-desc {
+    white-space: normal;
+    font-size: 16px;
+    line-height: 1.6;
+  }
 
-    .logo {
-      width: 44px;
-      height: 44px;
-      font-size: 16px;
-      border-radius: 8px;
-    }
+  .grid.cols-3 {
+    grid-template-columns: 1fr;
+  }
 
-    .title {
-      font-size: 18px;
-    }
+  .section {
+    padding: 18px;
+  }
 
+  .logo {
+    width: 44px;
+    height: 44px;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
     /* التعديلات الجديدة للنصوص الديناميكية */
     body {
       font-size: calc(16px + 0.3vw);
