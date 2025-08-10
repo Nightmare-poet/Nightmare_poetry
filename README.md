@@ -305,7 +305,7 @@ body {
   .header-inner {
     flex-wrap: wrap;
     gap: 12px;
-    padding: 16px 0;
+    padding: 16px;
   }
 
   .menu-toggle {
@@ -336,8 +336,7 @@ body {
   .nav a {
     padding: 10px;
     text-align: right;
-    word-break: break-word;
-    font-size: 18px;
+    word-break: break-word;  /* تكسر كلمات الروابط الطويلة */
   }
 
   .hero {
@@ -345,32 +344,44 @@ body {
     padding: 20px 12px;
   }
 
+  /* إضافة لضبط العرض */
+  .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
   body {
-    font-size: calc(16px + 0.4vw);
+    font-size: calc(16px + 0.3vw);
     line-height: 1.8;
+    word-break: break-word;    /* تكسر الكلمات الطويلة في النص */
+    overflow-wrap: break-word; /* لف النصوص */
+    hyphens: auto;             /* تفعيل التهجئة التلقائية لكسر الكلمات */
+    overflow-x: hidden;        /* منع التمرير الأفقي */
   }
 
   .quote {
-    font-size: calc(22px + 0.6vw) !important;
+    font-size: calc(22px + 0.5vw) !important;
     padding: 0 10px;
     line-height: 2.2 !important;
     word-break: break-word;
-    white-space: pre-wrap !important;
+    white-space: pre-wrap !important; /* يسمح بكسر الأسطر والحفاظ على الفراغات */
   }
 
   .work-desc, p, li {
-    white-space: pre-wrap !important;
+    white-space: pre-wrap !important;    /* يسمح بكسر الأسطر والحفاظ على الفراغات */
     word-wrap: break-word;
     overflow-wrap: break-word;
     hyphens: auto;
     max-width: 100%;
     line-height: 2;
-    font-size: calc(17px + 0.3vw);
+    font-size: calc(17px + 0.2vw);
     margin-bottom: 1em;
   }
 
   .form-control {
-    font-size: calc(15px + 0.3vw);
+    font-size: calc(15px + 0.2vw);
     line-height: 1.7;
   }
 
@@ -379,7 +390,7 @@ body {
   }
 
   .section {
-    padding: 18px 12px;
+    padding: 18px;
   }
 
   .logo {
